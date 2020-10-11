@@ -1,19 +1,9 @@
-
 game.StarterGui:SetCore("SendNotification", {
-13	    Title = "Trill's Chat Bypasser";
-14	    Text = "Enjoy!"; -- Required. Has to be a string!
-15	    Icon = ""; -- Optional, defaults to "" (no icon)
-16	    Duration = 5; -- Optional, defaults to 5 seconds
-20	})
-
-
-
-
-
-
-
-
-
+    Title = "Trill's Bypasser Loaded";
+    Text = "Enjoy!";
+    Icon = "5802511976";
+    Duration = 3;
+})
 
 --[[
 IronBrew:tm: obfuscation; Version 2.7.2
