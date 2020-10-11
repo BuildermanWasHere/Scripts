@@ -1,0 +1,72 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local SpeedChanger = Instance.new("ImageLabel")
+local Speed = Instance.new("TextBox")
+local Set = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+SpeedChanger.Name = "Speed Changer"
+SpeedChanger.Parent = ScreenGui
+SpeedChanger.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedChanger.BackgroundTransparency = 1.000
+SpeedChanger.BorderColor3 = Color3.fromRGB(27, 42, 53)
+SpeedChanger.Position = UDim2.new(0.36779505, 0, 0.355907768, 0)
+SpeedChanger.Size = UDim2.new(0, 289, 0, 199)
+SpeedChanger.Image = "rbxassetid://3570695787"
+SpeedChanger.ImageColor3 = Color3.fromRGB(57, 58, 58)
+SpeedChanger.ScaleType = Enum.ScaleType.Slice
+SpeedChanger.SliceCenter = Rect.new(100, 100, 100, 100)
+SpeedChanger.SliceScale = 0.120
+
+Speed.Name = "Speed"
+Speed.Parent = SpeedChanger
+Speed.BackgroundColor3 = Color3.fromRGB(106, 107, 107)
+Speed.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Speed.BorderSizePixel = 2
+Speed.Position = UDim2.new(0.150919646, 0, 0.120547235, 0)
+Speed.Size = UDim2.new(0, 200, 0, 50)
+Speed.Font = Enum.Font.GothamBold
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextSize = 14.000
+
+Set.Name = "Set"
+Set.Parent = SpeedChanger
+Set.BackgroundColor3 = Color3.fromRGB(106, 107, 107)
+Set.BorderColor3 = Color3.fromRGB(255, 250, 250)
+Set.BorderSizePixel = 2
+Set.Position = UDim2.new(0.235294119, 0, 0.48241207, 0)
+Set.Size = UDim2.new(0, 150, 0, 50)
+Set.Font = Enum.Font.GothamBold
+Set.Text = "Set"
+Set.TextColor3 = Color3.fromRGB(255, 255, 255)
+Set.TextSize = 14.000
+
+-- Scripts:
+
+local function SCPXM_fake_script() -- Set.LocalScript 
+	local script = Instance.new('LocalScript', Set)
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Button = script.Parent
+	local SpeedText = script.Parent.Parent.Speed
+	Button.MouseButton1Click:Connect(function()
+		
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = SpeedText.Text
+	end)
+end
+coroutine.wrap(SCPXM_fake_script)()
+local function ADNOVRE_fake_script() -- SpeedChanger.Script 
+	local script = Instance.new('Script', SpeedChanger)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(ADNOVRE_fake_script)()
